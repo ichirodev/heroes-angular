@@ -5,19 +5,29 @@ import { HeroService } from '../hero.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.css' ]
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService) {}
 
   ngOnInit(): void {
     this.getHeroes();
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+    this.heroService.getHeroes().subscribe((heroes) => {
+      let orderedHeroes = heroes.sort((a, b) => {
+        if (a.stars > b.stars) {
+          return -1;
+        }
+        if (a.stars < b.stars) {
+          return 1;
+        }
+        return 0;
+      });
+      this.heroes = orderedHeroes;
+    });
   }
 }
