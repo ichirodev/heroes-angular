@@ -6,9 +6,3 @@ export const HEROES: Hero[] = [
   { id: 14, name: 'Celeritas', stars: '5' },
   { id: 15, name: 'Chancla', stars: '3' },
 ];
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
