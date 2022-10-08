@@ -1,3 +1,3 @@
-# heroes-angular
+# Heroes
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-rizcbu)
+made by: Adan, Ian, Israel, Jesus
